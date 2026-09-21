@@ -1,0 +1,10 @@
+node_modules
+coverage
+out
+build
+
+next-env.d.ts
+tsconfig.tsbuildinfo
+
+.next
+.vercel
