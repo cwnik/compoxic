@@ -1,9 +1,9 @@
 import { IconBase, IconSecondary } from "../core";
-import type { RegisteredIcon } from "../types";
+import type { IconProps, RegisteredIcon } from "../types";
 
-function IconActivity() {
+function IconActivity(props: IconProps) {
     return (
-        <IconBase>
+        <IconBase {...props}>
             <IconSecondary>
                 <path d="M2 12H6" />
                 <path d="M18 12H22" />
