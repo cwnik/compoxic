@@ -1,5 +1,6 @@
 import { IconBase, IconSecondary } from "../core";
-import type { IconProps, RegisteredIcon } from "../types";
+import { defineIcon } from "../lib/define-icon";
+import type { IconProps } from "../types";
 
 function IconActivity(props: IconProps) {
     return (
@@ -14,20 +15,19 @@ function IconActivity(props: IconProps) {
     );
 }
 
-const activity = {
+const activity = defineIcon({
     metadata: {
         slug: "activity",
         displayName: "Activity",
-        category: "activity",
         componentName: "IconActivity",
         tone: "dual",
         description: "Represents activity or a live signal.",
+        category: "activity",
 
         primitives: ["path"],
-        tags: ["activity", "pulse", "signal", "monitoring", "trend"]
+        tags: ["activity", "signal", "pulse"]
     },
-
     component: IconActivity
-} as const satisfies RegisteredIcon;
+});
 
 export { IconActivity, activity };

@@ -1,5 +1,5 @@
-import { ICON_REGISTRY } from "./registry";
-import type { IconSlug } from "./registry";
+import { ICON_REGISTRY } from "../registry";
+import type { IconSlug } from "../registry";
 
 function isIconSlug(slug: string): slug is IconSlug {
     return Object.hasOwn(ICON_REGISTRY, slug);
