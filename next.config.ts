@@ -9,8 +9,6 @@ export default {
     devIndicators: false,
 
     env: { BUILD_TIMESTAMPS: Date.now().toString() },
-    experimental: { optimizePackageImports: [] },
-    images: { remotePatterns: [], qualities: [75, 100] },
 
     compiler: isInProductionMode ? { removeConsole: { exclude: ["error"] } } : undefined
 } satisfies NextConfig;
