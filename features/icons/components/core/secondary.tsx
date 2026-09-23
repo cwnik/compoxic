@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { ICON_DEFAULTS } from "../constants";
+import { ICON_DEFAULTS } from "../../constants/defaults";
 
 type IconSecondaryProps = { children: ReactNode };
 

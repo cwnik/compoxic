@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef, ComponentType, ReactNode } from "react";
 
-import type { IconCategory } from "./constants";
+import type { IconCategory } from "./constants/categories";
 
 type IconPrimitive = "path" | "circle" | "ellipse" | "line" | "polyline" | "polygon" | "rect";
 

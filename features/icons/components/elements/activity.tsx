@@ -1,6 +1,6 @@
+import type { IconProps } from "../../types";
 import { IconBase, IconSecondary } from "../core";
-import { defineIcon } from "../lib/define-icon";
-import type { IconProps } from "../types";
+import { defineIcon } from "../../lib/define-icon";
 
 function IconActivity(props: IconProps) {
     return (

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { defineIcon } from "./define-icon";
-import { IconActivity } from "../components/activity";
+import { IconActivity } from "../components/elements";
 
 describe("defineIcon", () => {
     it("returns the icon definition unchanged", () => {

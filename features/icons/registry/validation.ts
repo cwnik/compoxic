@@ -1,5 +1,5 @@
 import type { RegisteredIcon } from "../types";
-import { ICON_CATEGORIES } from "../constants";
+import { ICON_CATEGORIES } from "../constants/categories";
 
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const COMPONENT_NAME_PATTERN = /^Icon[A-Z][A-Za-z0-9]*$/;

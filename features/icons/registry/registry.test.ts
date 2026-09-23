@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { ICON_REGISTRY } from "./registry";
 import { validateIconRegistry } from "./validation";
 import type { RegisteredIcon } from "../types";
-import { IconActivity } from "../components/activity";
+import { IconActivity } from "../components/elements";
 
 describe("ICON_REGISTRY", () => {
     it("contains registered icons", () => {

@@ -1,7 +1,7 @@
 import { cn } from "cn";
 
-import { ICON_DEFAULTS } from "../constants";
-import type { IconProps } from "../types";
+import { ICON_DEFAULTS } from "../../constants/defaults";
+import type { IconProps } from "../../types";
 
 export function IconBase({
     children,
