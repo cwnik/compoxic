@@ -12,7 +12,7 @@ export function IconBase({
     "aria-hidden": ariaHidden,
     ...props
 }: IconProps) {
-    const accessibleName = title ?? ariaLabel;
+    const accessibleName = ariaLabel ?? title;
     const isAccessible = Boolean(accessibleName);
 
     return (
@@ -35,7 +35,6 @@ export function IconBase({
             aria-hidden={isAccessible ? undefined : (ariaHidden ?? true)}
         >
             {title ? <title>{title}</title> : null}
-
             {children}
         </svg>
     );
