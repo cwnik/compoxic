@@ -1,0 +1,9 @@
+export const ICON_DESIGN = {
+    GRID_SIZE: 24,
+    SAFE_AREA_MIN: 2,
+    SAFE_AREA_MAX: 22,
+    STROKE_WIDTH: 2,
+    SECONDARY_OPACITY: 0.25,
+    MIN_VISIBLE_GAP: 2,
+    MIN_DETAIL_LENGTH: 3
+} as const;
