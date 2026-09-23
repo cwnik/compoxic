@@ -20,6 +20,7 @@ const activity = {
         displayName: "Activity",
         category: "activity",
         componentName: "IconActivity",
+        tone: "dual",
         description: "Represents activity or a live signal.",
 
         primitives: ["path"],

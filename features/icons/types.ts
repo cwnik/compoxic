@@ -26,6 +26,7 @@ type IconDefinition = {
     slug: string;
     displayName: string;
     componentName: string;
+    tone: "dual";
     description: string;
     category: IconCategory;
     primitives: readonly IconPrimitive[];

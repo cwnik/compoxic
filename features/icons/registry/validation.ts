@@ -26,6 +26,7 @@ function validateIconRegistry(registry: IconRegistryMap): void {
         if (!COMPONENT_NAME_PATTERN.test(metadata.componentName))
             errors.push(`${prefix} componentName must use the IconName convention.`);
 
+        if (metadata.tone !== "dual") errors.push(`${prefix} must use the dual tone mode.`);
         if (!metadata.description.trim()) errors.push(`${prefix} description is required.`);
         if (!VALID_CATEGORIES.has(metadata.category))
             errors.push(`${prefix} has an invalid category "${metadata.category}".`);
