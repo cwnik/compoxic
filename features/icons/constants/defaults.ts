@@ -1,4 +1,4 @@
-import { ICON_DESIGN } from "./design";
+const ICON_DESIGN = { GRID_SIZE: 24, STROKE_WIDTH: 2, SECONDARY_OPACITY: 0.25 } as const;
 
 export const ICON_DEFAULTS = {
     VIEW_BOX: `0 0 ${ICON_DESIGN.GRID_SIZE} ${ICON_DESIGN.GRID_SIZE}`,
