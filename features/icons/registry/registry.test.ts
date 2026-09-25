@@ -4,6 +4,7 @@ import { ICON_REGISTRY } from "./registry";
 import { validateIconRegistry } from "./validation";
 import type { RegisteredIcon } from "../types";
 import { IconActivity } from "../components/elements";
+import { ICON_CATEGORIES } from "../constants/categories";
 
 describe("ICON_REGISTRY", () => {
     it("contains registered icons", () => {
@@ -35,11 +36,11 @@ describe("validateIconRegistry", () => {
                     slug: "different-slug",
                     displayName: "Activity",
                     componentName: "IconActivity",
-                    description: "Represents activity or a live signal.",
-                    category: "activity",
-                    primitives: ["path"],
+                    category: ICON_CATEGORIES.ACTIVITY,
+
                     tags: ["activity"]
                 },
+
                 component: IconActivity
             }
         } as unknown as Record<string, RegisteredIcon>;
@@ -54,11 +55,11 @@ describe("validateIconRegistry", () => {
                     slug: "Activity Icon",
                     displayName: "Activity",
                     componentName: "IconActivity",
-                    description: "Represents activity or a live signal.",
-                    category: "activity",
-                    primitives: ["path"],
+                    category: ICON_CATEGORIES.ACTIVITY,
+
                     tags: ["activity"]
                 },
+
                 component: IconActivity
             }
         } as unknown as Record<string, RegisteredIcon>;
@@ -73,11 +74,11 @@ describe("validateIconRegistry", () => {
                     slug: "activity",
                     displayName: "Activity",
                     componentName: "IconActivity",
-                    description: "Represents activity or a live signal.",
-                    category: "activity",
-                    primitives: ["path"],
+                    category: ICON_CATEGORIES.ACTIVITY,
+
                     tags: ["activity", "activity"]
                 },
+
                 component: IconActivity
             }
         } as unknown as Record<string, RegisteredIcon>;

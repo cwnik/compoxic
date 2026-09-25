@@ -2,8 +2,6 @@ import type { ComponentPropsWithoutRef, ComponentType, ReactNode } from "react";
 
 import type { IconCategory } from "./constants/categories";
 
-type IconPrimitive = "path" | "circle" | "ellipse" | "line" | "polyline" | "polygon" | "rect";
-
 type IconProps = Omit<
     ComponentPropsWithoutRef<"svg">,
     | "children"
@@ -26,11 +24,8 @@ type IconDefinition = {
     slug: string;
     displayName: string;
     componentName: string;
-    tone: "dual";
-    description: string;
     category: IconCategory;
-    primitives: readonly IconPrimitive[];
-    tags: readonly string[];
+    tags: string[];
 };
 
 type RegisteredIcon<TComponent extends IconComponent = IconComponent> = {
@@ -38,4 +33,4 @@ type RegisteredIcon<TComponent extends IconComponent = IconComponent> = {
     component: TComponent;
 };
 
-export type { IconPrimitive, IconProps, IconComponent, IconDefinition, RegisteredIcon };
+export type { IconProps, IconComponent, IconDefinition, RegisteredIcon };

@@ -6,11 +6,7 @@ import { ICON_REGISTRY } from "./registry";
 for (const [slug, entry] of Object.entries(ICON_REGISTRY))
     describe(`${slug} icon contract`, () => {
         it("renders the canonical SVG structure", () => {
-            const Icon = entry.component;
-
-            const { container } = render(<Icon aria-label={entry.metadata.displayName} />);
-
-            const svg = container.querySelector("svg");
+            const svg = render(<entry.component />).container.querySelector("svg");
 
             expect(svg).toBeInTheDocument();
             expect(svg).toHaveAttribute("viewBox", "0 0 24 24");
@@ -25,22 +21,14 @@ for (const [slug, entry] of Object.entries(ICON_REGISTRY))
         });
 
         it("renders the dual-tone secondary layer", () => {
-            const Icon = entry.component;
-
-            const { container } = render(<Icon />);
-
-            const secondary = container.querySelector('[data-icon-tone="secondary"]');
+            const secondary = render(<entry.component />).container.querySelector('[data-icon-tone="secondary"]');
 
             expect(secondary).toBeInTheDocument();
             expect(secondary).toHaveAttribute("stroke-opacity", "0.25");
         });
 
         it("is decorative by default", () => {
-            const Icon = entry.component;
-
-            const { container } = render(<Icon />);
-
-            const svg = container.querySelector("svg");
+            const svg = render(<entry.component />).container.querySelector("svg");
 
             expect(svg).toHaveAttribute("aria-hidden", "true");
             expect(svg).not.toHaveAttribute("role");
@@ -48,11 +36,9 @@ for (const [slug, entry] of Object.entries(ICON_REGISTRY))
         });
 
         it("supports an accessible name", () => {
-            const Icon = entry.component;
-
-            const { container } = render(<Icon aria-label={entry.metadata.displayName} />);
-
-            const svg = container.querySelector("svg");
+            const svg = render(<entry.component aria-label={entry.metadata.displayName} />).container.querySelector(
+                "svg"
+            );
 
             expect(svg).toHaveAttribute("role", "img");
             expect(svg).toHaveAttribute("aria-label", entry.metadata.displayName);
