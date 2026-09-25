@@ -62,10 +62,10 @@
     --color-input: var(--input);
     --color-ring: var(--ring);
 
-    --radius-sm: var(--radius) - 2px;
+    --radius-sm: calc(var(--radius) - 2px);
     --radius-md: var(--radius);
-    --radius-lg: var(--radius) + 2px;
-    --radius-xl: var(--radius) + 4px;
+    --radius-lg: calc(var(--radius) + 2px);
+    --radius-xl: calc(var(--radius) + 4px);
 
     --shadow-sm: var(--shadow-sm);
     --shadow-md: var(--shadow-md);
