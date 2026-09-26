@@ -1,16 +1,7 @@
 import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { IconBase } from "./base";
-import type { IconProps } from "../../types";
-
-function IconTest(props: IconProps) {
-    return (
-        <IconBase {...props}>
-            <path d="M2 12H22" />
-        </IconBase>
-    );
-}
+import { IconTest } from "../test";
 
 describe("IconBase", () => {
     it("renders the canonical SVG attributes", () => {
@@ -75,9 +66,9 @@ describe("IconBase", () => {
 
     it("renders children without modifying their geometry", () => {
         const { container } = render(
-            <IconBase>
+            <IconTest>
                 <path data-testid="icon-path" d="M2 12H22" />
-            </IconBase>
+            </IconTest>
         );
 
         const path = container.querySelector('[data-testid="icon-path"]');
