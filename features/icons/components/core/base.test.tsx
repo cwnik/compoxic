@@ -2,16 +2,19 @@ import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { IconBase } from "./base";
+import type { IconProps } from "../../types";
+
+function IconTest(props: IconProps) {
+    return (
+        <IconBase {...props}>
+            <path d="M2 12H22" />
+        </IconBase>
+    );
+}
 
 describe("IconBase", () => {
     it("renders the canonical SVG attributes", () => {
-        const { container } = render(
-            <IconBase>
-                <path d="M2 12H22" />
-            </IconBase>
-        );
-
-        const svg = container.querySelector("svg");
+        const svg = render(<IconTest />).container.querySelector("svg");
 
         expect(svg).toHaveAttribute("viewBox", "0 0 24 24");
         expect(svg).toHaveAttribute("xmlns", "http://www.w3.org/2000/svg");
@@ -25,39 +28,21 @@ describe("IconBase", () => {
     });
 
     it("uses the default size", () => {
-        const { container } = render(
-            <IconBase>
-                <path d="M2 12H22" />
-            </IconBase>
-        );
-
-        const svg = container.querySelector("svg");
+        const svg = render(<IconTest />).container.querySelector("svg");
 
         expect(svg).toHaveAttribute("width", "24");
         expect(svg).toHaveAttribute("height", "24");
     });
 
     it("supports a custom size", () => {
-        const { container } = render(
-            <IconBase size={32}>
-                <path d="M2 12H22" />
-            </IconBase>
-        );
-
-        const svg = container.querySelector("svg");
+        const svg = render(<IconTest size={32} />).container.querySelector("svg");
 
         expect(svg).toHaveAttribute("width", "32");
         expect(svg).toHaveAttribute("height", "32");
     });
 
     it("is decorative by default", () => {
-        const { container } = render(
-            <IconBase>
-                <path d="M2 12H22" />
-            </IconBase>
-        );
-
-        const svg = container.querySelector("svg");
+        const svg = render(<IconTest />).container.querySelector("svg");
 
         expect(svg).toHaveAttribute("aria-hidden", "true");
         expect(svg).not.toHaveAttribute("role");
@@ -65,13 +50,7 @@ describe("IconBase", () => {
     });
 
     it("becomes accessible when given an aria-label", () => {
-        const { container } = render(
-            <IconBase aria-label="Activity">
-                <path d="M2 12H22" />
-            </IconBase>
-        );
-
-        const svg = container.querySelector("svg");
+        const svg = render(<IconTest aria-label="Activity" />).container.querySelector("svg");
 
         expect(svg).toHaveAttribute("role", "img");
         expect(svg).toHaveAttribute("aria-label", "Activity");
@@ -79,13 +58,7 @@ describe("IconBase", () => {
     });
 
     it("becomes accessible when given a title", () => {
-        const { container } = render(
-            <IconBase title="Activity">
-                <path d="M2 12H22" />
-            </IconBase>
-        );
-
-        const svg = container.querySelector("svg");
+        const svg = render(<IconTest title="Activity" />).container.querySelector("svg");
         const title = svg?.querySelector("title");
 
         expect(svg).toHaveAttribute("role", "img");
@@ -95,13 +68,7 @@ describe("IconBase", () => {
     });
 
     it("prefers aria-label over title for the accessible name", () => {
-        const { container } = render(
-            <IconBase title="Activity icon" aria-label="Current activity">
-                <path d="M2 12H22" />
-            </IconBase>
-        );
-
-        const svg = container.querySelector("svg");
+        const svg = render(<IconTest title="Activity" aria-label="Current activity" />).container.querySelector("svg");
 
         expect(svg).toHaveAttribute("aria-label", "Current activity");
     });
