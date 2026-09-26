@@ -19,7 +19,7 @@ function validateIconRegistry(registry: IconRegistryMap): void {
         if (!/^Icon[A-Z][A-Za-z0-9]*$/.test(entry.metadata.componentName))
             errors.push(`${prefix} componentName must use the IconName convention.`);
 
-        if (!new Set(Object.values(ICON_CATEGORIES)).has(entry.metadata.category))
+        if (!new Set(Object.values(ICON_CATEGORIES).map((item) => item.value)).has(entry.metadata.category))
             errors.push(`${prefix} has an invalid category "${entry.metadata.category}".`);
 
         if (entry.metadata.tags.length === 0) errors.push(`${prefix} must contain at least one tag.`);

@@ -23,7 +23,7 @@ const icon = {
         slug: "test",
         displayName: "Test",
         componentName: "IconTest",
-        category: ICON_CATEGORIES.MISCELLANEOUS,
+        category: ICON_CATEGORIES.MISCELLANEOUS.value,
         tags: ["test", "icon"]
     },
 
